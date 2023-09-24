@@ -31,16 +31,14 @@ class Solution {
         // }
         // return new int[] {};
 
-        int n=nums.length;
-        for(int i=0;i<n;i++){
-            for(int j=0;j<n;j++){
-                if(i==j){
-                    continue;
-                }
-                if(arr[i]+arr[j]==target){
-                    return ;
+        int n = nums.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (nums[i] + nums[j] == target) {
+                    return new int[]{i, j};
                 }
             }
         }
-    }
+        return new int[]{};
+        }
 }
